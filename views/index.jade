@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  nav
+    a(href="/") Home
+    a(href="/sign-in")
+
+  h1.home= title
+
+  for message in messages
+    div.message
+      h2= message.title
+      span= message.createdBy
+      p= message.text
+      span= message.created_at_formatted
+  
+  footer
+    span Members Only LLC &copy;

@@ -1,0 +1,13 @@
+extends layout
+
+block content 
+  h1= title
+
+  span Current Membership: #{membership}
+
+  p Upgrade your membership by entering the password for your desired tier
+
+  form(action="", method="POST")
+    label(for="password") Password
+    input#password(type="password", name="password", required)
+    button(type="submit") Submit

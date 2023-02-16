@@ -17,6 +17,7 @@ mongoose.set("strictQuery", false)
 var indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup')
+const upgradeRouter = require('./routes/upgradeMembership')
 
 var app = module.exports = express();
 
@@ -43,12 +44,13 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-const initializePassport = require('./passport-config');
+const initializePassport = require('./passport-config').initialize;
 initializePassport(passport)
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
+app.use('/upgrade_membership', upgradeRouter)
 app.use('/logout', (req, res, next) => {
   req.logOut(err => {
     if(err){

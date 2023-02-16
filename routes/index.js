@@ -2,8 +2,9 @@ var express = require("express");
 var router = express.Router();
 const Message = require("../models/message");
 const User = require("../models/user");
+const { checkAuth } = require("../passport-config");
 
-router.get("/", async function (req, res, next) {
+router.get("/", checkAuth, function (req, res, next) {
   Message.find().exec((err, messages) => {
     if (err) {
       return next(err);

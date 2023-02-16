@@ -3,9 +3,10 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
 const express = require("express");
+const { checkNotAuth } = require("../passport-config");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
+router.get("/", checkNotAuth, (req, res, next) => {
   res.render("signup", { title: "Sign up" });
 });
 

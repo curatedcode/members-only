@@ -1,7 +1,8 @@
 const router = require('express').Router()
 const User = require('../models/user');
+const { checkAuth } = require('../passport-config');
 
-router.get('/', (req, res, next)=>{
+router.get('/', checkAuth, (req, res, next)=>{
   User.findById(req.session.passport.user).exec((err, user) => {
     if (err) {
       return next(err);

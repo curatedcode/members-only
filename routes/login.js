@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const passport = require('passport');
+const { checkNotAuth } = require("../passport-config");
 
-router.get("/", (req, res, next) => {
+router.get("/", checkNotAuth, (req, res, next) => {
   res.render("login", { title: "Login" });
 });
 

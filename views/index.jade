@@ -7,7 +7,9 @@ block content
       a.login(href="/login") Login
       a.signup(href="/signup") Sign up
     if isLoggedIn
-      span= user?.name
+      span= user.name
+      if user.membership !== 'premium' || user.membership !== 'admin'
+        a(href="/upgrade_membership") Upgrade Membership
       a(href="/logout") Log out
 
   h1.home= title
@@ -15,7 +17,9 @@ block content
   for message in messages
     div.message
       h2= message.title
-      span= message.createdBy
+      if isLoggedIn
+        if user.membership === 'premium'
+          span= message.createdBy
       p= message.text
       span= message.created_at_formatted
   

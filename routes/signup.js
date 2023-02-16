@@ -27,7 +27,7 @@ router.post("/", (req, res, next) => {
           first: req.body.first_name,
           last: req.body.last_name,
         },
-        membership: "visitor",
+        membership: "standard",
       }).save((err) => {
         if (err) {
           return next(err);

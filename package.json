@@ -11,15 +11,21 @@
   },
   "dependencies": {
     "async": "^3.2.4",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.3",
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
     "luxon": "^3.2.1",
     "mongoose": "^6.9.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

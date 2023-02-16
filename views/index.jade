@@ -3,7 +3,12 @@ extends layout
 block content
   nav
     a(href="/") Home
-    a(href="/sign-in")
+    if !isLoggedIn
+      a.login(href="/login") Login
+      a.signup(href="/signup") Sign up
+    if isLoggedIn
+      span= user?.name
+      a(href="/logout") Log out
 
   h1.home= title
 
@@ -15,4 +20,4 @@ block content
       span= message.created_at_formatted
   
   footer
-    span Members Only LLC &copy;
+    span Members Only &copy;

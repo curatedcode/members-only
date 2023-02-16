@@ -5,7 +5,9 @@ const User = require("../models/user");
 const { checkAuth } = require("../passport-config");
 
 router.get("/", checkAuth, function (req, res, next) {
-  Message.find().exec((err, messages) => {
+  Message.find()
+    .sort([['createdAt', 'descending']])
+    .exec((err, messages) => {
     if (err) {
       return next(err);
     }

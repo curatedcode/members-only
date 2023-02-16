@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup')
 const upgradeRouter = require('./routes/upgradeMembership')
+const postRouter = require('./routes/posts')
 
 var app = module.exports = express();
 
@@ -51,6 +52,8 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/upgrade_membership', upgradeRouter)
+app.use('/create_post', postRouter)
+
 app.use('/logout', (req, res, next) => {
   req.logOut(err => {
     if(err){

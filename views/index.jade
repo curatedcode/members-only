@@ -8,8 +8,10 @@ block content
       a.signup(href="/signup") Sign up
     if isLoggedIn
       span= user.name
-      if user.membership !== 'premium' || user.membership !== 'admin'
+      if user.membership !== 'premium' && user.membership !== 'admin'
         a(href="/upgrade_membership") Upgrade Membership
+      else
+        a(href="/create_post") Create Post
       a(href="/logout") Log out
 
   h1.home= title

@@ -52,7 +52,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/upgrade_membership', upgradeRouter)
-app.use('/create_post', postRouter)
+app.use('/post', postRouter)
 
 app.use('/logout', (req, res, next) => {
   req.logOut(err => {

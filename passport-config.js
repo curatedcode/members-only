@@ -28,22 +28,41 @@ function initialize(passport) {
   });
 }
 
-function checkNotAuth(req, res, next){
-  if(req.isAuthenticated()){
-    return res.redirect('back')    
+function checkNotAuth(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.redirect("back");
   }
-  return next()
+  return next();
 }
 
-function checkAuth(req, res, next){
-  if(req.isAuthenticated()){
-    return next()
+function checkAuth(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
   }
-  return res.redirect('/login')
+  return res.redirect("/login");
+}
+
+function checkAdminPrivileges(req, res, next) {
+  if (
+    req.isAuthenticated()
+  ){
+    User.findById(req.session.passport.user).exec((err, user) => {
+      if (err) {
+        return next(err);
+      }
+      if (user.membership === "admin") {
+        return next()
+      }
+      return res.redirect('back')
+    })
+  } else {
+    return res.redirect("back");
+  }
 }
 
 module.exports = {
   initialize,
   checkAuth,
-  checkNotAuth
+  checkNotAuth,
+  checkAdminPrivileges,
 };

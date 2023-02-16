@@ -1,0 +1,14 @@
+extends layout 
+
+block content
+  h1= title
+
+  div
+    h3= message.title
+    span= message.createdBy
+    span= message.createdAt
+    p= message.text
+
+  form(action="", method="POST")
+    a(href="/") Cancel
+    button#delete_post(type="submit", name="delete_post") Confirm

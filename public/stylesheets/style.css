@@ -1,8 +1,214 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #E5DDC8;
+  color: black;
+  height: 100vh;
+}
+
+nav {
+  background-color:  #01949A;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  color: #E5DDC8;
+  font-weight: bold;
+  font-size: large;
+  justify-content: space-around;
+  gap: 1.5rem;
+}
+
+nav a.signup {
+  background-color: #E5DDC8;
+  color: #01949A;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+}
+
+footer {
+  background-color:  #01949A;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  color: #E5DDC8;
+  font-weight: bold;
+  font-size: large;
+  justify-content: center;
+  margin-top: 6rem;
 }
 
 a {
-  color: #00B7FF;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, span, p {
+  padding: 0;
+  margin: 0;
+}
+
+button[type="submit"] {
+  background-color: #01949A;
+  font-size: larger;
+  border: none;
+  padding: .5rem 1.5rem;
+  color: #E5DDC8;
+  font-weight: bold;
+  border-radius: .5rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 2rem 0;
+}
+
+textarea {
+  resize: none;
+}
+
+form .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+form .form-group > label {
+  font-size: large;
+  width: 6rem;
+  font-weight: bold;
+}
+
+form .form-group > input {
+  padding: .25rem .5rem;
+}
+
+
+/* Index Page */
+h1.home {
+  color: #01949A;
+  font-size: x-large;
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.message {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  margin-bottom: 4rem;
+}
+
+.message > h2 {
+  font-size: large;
+}
+
+.message > span.date {
+  margin-bottom: .5rem;
+  font-size: small;
+}
+
+a#delete_post {
+  font-size: large;
+  border: none;
+  padding: .25rem 1rem;
+  color: #01949A;
+  font-weight: bold;
+  border-radius: .5rem;
+  width: fit-content;
+  margin: .25rem 0;
+}
+
+/* Login Page */
+
+div.login {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+  color: #01949A;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+
+div.login > h1 {
+  font-size: x-large;
+}
+
+div.login > span {
+  font-weight: 500;
+}
+
+div.login > a {
+  text-decoration: underline;
+}
+
+/* Post Create Page */
+
+h1.post-form, h1.signup {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+  color: #01949A;
+  margin-bottom: 4rem;
+  font-weight: bold;
+}
+
+/* Sign Up Page */
+
+
+/* Post Form Delete Page */
+
+
+h1.post-delete {
+  color: #01949A;
+  font-size: x-large;
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+div.post-delete {
+  padding: 0 2rem;
+}
+
+form.post-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+a.post-delete {
+  color: #01949A;
+  font-weight: bold;
+}
+
+button#delete_post {
+  transform: none;
+  position: inherit;
+  margin: 0;
+}
+
+/* Upgrade Membership Page */
+
+h1.upgrade {
+  color: #01949A;
+  font-size: x-large;
+  width: 100%;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+p.upgrade {
+  margin: 1rem 3rem;
+  text-align: center;
 }

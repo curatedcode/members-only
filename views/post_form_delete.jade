@@ -1,14 +1,17 @@
 extends layout 
 
 block content
-  h1= title
+  nav
+    a(href="/") Home
 
-  div
-    h3= message.title
-    span= message.createdBy
-    span= message.createdAt
+  h1.post-delete Confirm Post Deletion 
+
+  div.post-delete
+    h3.title= message.title
+    span.author= message.createdBy
+    span.date= message.createdAt
     p= message.text
 
-  form(action="", method="POST")
-    a(href="/") Cancel
+  form.post-delete(action="", method="POST")
+    a.post-delete(href="/") Cancel
     button#delete_post(type="submit", name="delete_post") Confirm

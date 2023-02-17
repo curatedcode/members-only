@@ -4,7 +4,7 @@ const Message = require("../models/message");
 const User = require("../models/user");
 const { checkAuth } = require("../passport-config");
 
-router.get("/", checkAuth, function (req, res, next) {
+router.get("/", function (req, res, next) {
   Message.find()
     .sort([['createdAt', 'descending']])
     .exec((err, messages) => {

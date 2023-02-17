@@ -1,13 +1,15 @@
 extends layout
 
-block content 
-  h1= title
+block content
+  nav
+    a(href="/") Home
 
-  span Current Membership: #{membership}
+  h1.upgrade= title
 
-  p Upgrade your membership by entering the password for your desired tier
+  p.upgrade Upgrade your membership by entering the secret password for your desired tier
 
-  form(action="", method="POST")
-    label(for="password") Password
-    input#password(type="password", name="password", required)
+  form.upgrade(action="", method="POST")
+    div.form-group
+      label(for="password") Password
+      input#password(type="password", name="password", required)
     button(type="submit") Submit

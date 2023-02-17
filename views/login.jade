@@ -1,12 +1,15 @@
 extends layout
 
 block content 
-  h1= title
+  div.login
+    h1= title
+    span or
+    a.signup(href='/signup') Create an account
 
   if messages.error 
     span= messages.error
 
-  form(action="", method="POST")
+  form.login(action="", method="POST")
     div.form-group
       label(for="email") Email
       input#email(type='text', name="email", required)
@@ -14,5 +17,3 @@ block content
       label(for="password") Password
       input#password(type='password', name="password", required)
     button(type="submit") Submit
-  
-  a.signup(href='/signup') Create an account

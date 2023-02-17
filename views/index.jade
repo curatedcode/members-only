@@ -7,25 +7,24 @@ block content
       a.login(href="/login") Login
       a.signup(href="/signup") Sign up
     if isLoggedIn
-      span= user.name
       if user.membership === 'premium' || user.membership === 'standard'
         a(href="/upgrade_membership") Change Membership
       if user.membership === 'premium' || user.membership === 'admin'
         a(href="/post/create_post") Create Post
       a(href="/logout") Log out
 
-  h1.home= title
+  h1.home All Posts
 
   for message in messages
     div.message
       h2= message.title
+      span.date= message.created_at_formatted
       if isLoggedIn
         if user.membership === 'premium' || user.membership === 'admin'
           span= message.createdBy
         if user.membership === 'admin'
-          a(href=`/post/${message._id}/delete`) Delete
+          a#delete_post(href=`/post/${message._id}/delete`) Delete
       p= message.text
-      span= message.created_at_formatted
   
   footer
     span Members Only &copy;

@@ -1,13 +1,18 @@
 extends layout 
 
 block content
-  h1= title
+  nav
+    a(href="/") Home
 
-  form(action="", method="POST")
-    label(for="title") Title
-    input#title(type="text", name="title", required)
-    label(for="text") Body
-    textarea#text(name="text", required)
+  h1.post-form= title
+
+  form.post-form(action="", method="POST")
+    div.form-group
+      label(for="title") Title
+      input#title(type="text", name="title", required)
+    div.form-group
+      label(for="text") Body
+      textarea#text(name="text", required)
     button(type="submit") Submit
 
   if errors

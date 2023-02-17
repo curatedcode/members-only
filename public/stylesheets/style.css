@@ -43,6 +43,11 @@ a {
   text-decoration: none;
 }
 
+a:hover, button:hover {
+  opacity: 90%;
+  cursor: pointer;
+}
+
 h1, h2, span, p {
   padding: 0;
   margin: 0;
@@ -76,11 +81,28 @@ form .form-group {
 form .form-group > label {
   font-size: large;
   width: 6rem;
+  margin: 0 .5rem 0 0;
   font-weight: bold;
+  text-align: center;
 }
 
 form .form-group > input {
   padding: .25rem .5rem;
+}
+
+/* RESPONSIVE FOR ALL PAGES */
+
+@media (min-width: 768px){
+  nav {
+    justify-content: center;
+    gap: 4rem;
+  }
+  .message, div.post-delete  {
+    width: 768px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 
@@ -166,7 +188,6 @@ h1.post-form, h1.signup {
 
 /* Post Form Delete Page */
 
-
 h1.post-delete {
   color: #01949A;
   font-size: x-large;
@@ -177,6 +198,9 @@ h1.post-delete {
 
 div.post-delete {
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
 
 form.post-delete {

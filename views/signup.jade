@@ -3,6 +3,7 @@ extends layout
 block content
   nav
     a(href="/") Home
+    a.login(href='/login') Login
 
   h1.signup= title
 
@@ -20,5 +21,3 @@ block content
       label(for="password") Password
       input#password(type='password', name="password", required)
     button(type="submit") Submit
-
-  a.login(href='/login') Login instead
